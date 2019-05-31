@@ -12,5 +12,8 @@
   <h1><?= $page->title()->h() ?></h1>
 </div>
 
+<?= js('/dist/manifest.js') ?>
+<?= js('/dist/vendor.js') ?>
+<?= js('/dist/site.js') ?>
 </body>
 </html>

@@ -12,6 +12,8 @@ let mix = require('laravel-mix');
  */
 
 mix
+  .js('assets/js/site.js', 'dist/')
+  .extract()
   .sass('assets/sass/site.scss', 'dist/')
   .browserSync({
     files: 'dist/**/*',
