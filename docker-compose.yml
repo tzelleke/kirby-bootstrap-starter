@@ -3,7 +3,7 @@ version: '3'
 services:
   kirby:
     image: richarvey/nginx-php-fpm:latest
-    container_name: kirby
+    container_name: kirby-bootstrap-starter
     environment:
       - PUID=1000
       - PGID=1000
