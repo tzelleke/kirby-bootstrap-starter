@@ -1,4 +1,5 @@
-let mix = require('laravel-mix');
+const mix = require('laravel-mix');
+const globImporter = require('node-sass-glob-importer');
 
 /*
  |--------------------------------------------------------------------------
@@ -14,7 +15,7 @@ let mix = require('laravel-mix');
 mix
   .js('assets/js/site.js', 'dist/')
   .extract()
-  .sass('assets/sass/site.scss', 'dist/')
+  .sass('assets/sass/site.scss', 'dist/', { importer: globImporter() })
   .browserSync({
     files: 'dist/**/*',
     proxy: 'localhost:8080',
