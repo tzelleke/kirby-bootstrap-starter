@@ -15,3 +15,4 @@ Icon
 /site/config/.license
 /mix-manifest.json
 /dist
+.env

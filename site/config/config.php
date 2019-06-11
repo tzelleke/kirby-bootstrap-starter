@@ -1,5 +1,5 @@
 <?php
 
 return [
-    'url' => 'http://localhost:8080'
+    'url' => 'http://localhost:' . getenv('MIX_HTTP_PORT')
 ];

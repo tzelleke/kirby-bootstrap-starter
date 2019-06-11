@@ -4,17 +4,14 @@ services:
   kirby:
     image: richarvey/nginx-php-fpm:latest
     container_name: kirby-bootstrap-starter
+    env_file:
+      - .env
     environment:
-      - PUID=1000
-      - PGID=1000
       - SKIP_COMPOSER=1
       - PHP_MEM_LIMIT=1024
       - PHP_ERRORS_STDERR=1
       - WEBROOT=/var/www/html
-      - ENABLE_XDEBUG=1
-      - XDEBUG_CONFIG=remote_host=172.18.0.1
-      - PHP_IDE_CONFIG=serverName=docker
     volumes:
       - ./:/var/www/html
     ports:
-      - 8080:80
+      - "$MIX_HTTP_PORT:80"

@@ -18,7 +18,7 @@ mix
   .sass('assets/sass/site.scss', 'dist/', { importer: globImporter() })
   .browserSync({
     files: 'dist/**/*',
-    proxy: 'localhost:8080',
+    proxy: 'localhost:' + process.env.MIX_HTTP_PORT,
     open: false
   })
 ;
