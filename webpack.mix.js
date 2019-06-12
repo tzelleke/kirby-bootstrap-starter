@@ -13,11 +13,13 @@ const globImporter = require('node-sass-glob-importer');
  */
 
 mix
-  .js('assets/js/site.js', 'dist/')
+  .setPublicPath('assets')
+  .sass('src/sass/site.scss', '', { importer: globImporter() })
+  .js('src/js/site.js', '')
   .extract()
-  .sass('assets/sass/site.scss', 'dist/', { importer: globImporter() })
+  .version()
   .browserSync({
-    files: 'dist/**/*',
+    files: 'assets/**/*',
     proxy: 'localhost:' + process.env.MIX_HTTP_PORT,
     open: false
   })

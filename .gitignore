@@ -13,6 +13,5 @@ Icon
 /site/sessions/*
 !/site/sessions/index.html
 /site/config/.license
-/mix-manifest.json
 /dist
 .env
